@@ -1,0 +1,23 @@
+security:
+  oauth2:
+    client:
+      client-id: client
+      client-secret: secret
+      access-token-uri: http://localhost:8080/oauth/token
+      user-authorization-uri: http://localhost:8080/oauth/authorize
+      grant-type: authorization_code
+      scope: server
+    authorization:
+      check-token-access: http://localhost:8080/oauth/check_token
+    resource:
+      user-info-uri: http://localhost:8080/user
+      id: resource
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  application:
+    name: resource
+server:
+  port: 8081
